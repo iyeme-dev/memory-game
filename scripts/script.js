@@ -65,3 +65,12 @@ function pickFruits(pairCount) {
     return newFruit;
 
 }
+
+// shuffle fruits in grid
+function shuffle(arr){
+    for(let i=arr.lenth-1; i>0; i--){
+        let j - Math.floor(Math.random()*(i+1))
+        [arr[i], arr[j]] = [arr[j],arr[i]]
+    }
+    return arr;
+}
