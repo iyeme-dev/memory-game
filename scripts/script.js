@@ -79,3 +79,13 @@ function shuffle(arr){
     }
     return arr;
 }
+
+// Start each game level
+function startLevel () {
+    lock = false;
+    totalFlips = 0;
+    matchedPairs = 0;
+    messageDiv.texxtContent = '';
+    restartBtn.style.display = 'none';
+    
+}
