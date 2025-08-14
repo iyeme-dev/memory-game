@@ -31,9 +31,14 @@ const fruitList = [
   "watermelon.png",
 ];
 
+const levelDiv = document.getElementById('level');
+const board = document.getElementById('game-board');
+const timerDiv = document.getElementById('timer');
+const messageDiv = document.getElementById('message');
+const restartBtn = document.getElementById('restart-btn');
+
 // Manage time limit for each level
 let level = 1;
-
 function getTimeLimit(level) {
     if (level === 1) return 20;
     else if (level <=3) return 30;
