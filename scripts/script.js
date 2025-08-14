@@ -43,4 +43,13 @@ function getTimeLimit(level) {
     else return 120;
 }
 
+// Update grid-size
+function getGridSize(level) {
+    if (level < 2) return [2,2];
+    else if (level < 4) return [3,2];
+    else if (level < 6) return [4,3];
+    else if (level < 9) return [4,4];
+    else if (level < 12) return [5,4];
+    else return [6,5];
 
+}
