@@ -38,7 +38,7 @@ const messageDiv = document.getElementById('message');
 const restartBtn = document.getElementById('restart-btn');
 
 // Manage time limit for each level
-let level = 1;
+// let level = 1;
 function getTimeLimit(level) {
     if (level === 1) return 20;
     else if (level <=3) return 30;
@@ -72,8 +72,8 @@ function pickFruits(pairCount) {
 }
 
 // shuffle fruits in grid
-function shuffle(arr){
-    for(let i=arr.lenth-1; i>0; i--) {
+function shuffle(arr) {
+    for(let i = arr.lenth-1; i > 0; i--) {
         let j = Math.floor(Math.random()*(i+1))
         [arr[i], arr[j]] = [arr[j],arr[i]]
     }
@@ -85,7 +85,27 @@ function startLevel () {
     lock = false;
     totalFlips = 0;
     matchedPairs = 0;
-    messageDiv.texxtContent = '';
+    messageDiv.textContent = '';
     restartBtn.style.display = 'none';
-    
+
+    const [cols, rows] = getGridSize(level);
+    gridSize = [cols, rows];
+    levelTimeLimit = getTimeLimit(level);
+    timeLeft = levelTimeLimit;
+    levelDiv.textContent = `level ${level} - Match all pairs`
+    board.style.gridTemplateColumns = `repeat(${cols}, 60px)`
+
+    let pairs = Math.floor((cols * rows) / 2);
+    fruits = pickFruits(pairs);
+    let cards = shuffle([...fruits, ...fruits]);
+    board.innerHTML = '';
+
+    cards.forEach((fruit, i) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.index = i;
+        card.dataset.fruit = fruit;
+        card.textContent = ''
+        card.addEventListener('click',)
+    })
 }
