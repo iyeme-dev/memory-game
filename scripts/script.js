@@ -53,3 +53,15 @@ function getGridSize(level) {
     else return [6,5];
 
 }
+
+//Select fruits
+function pickFruits(pairCount) {
+    const fruitArray = [...fruitList];
+    let newFruit = [];
+    for (let i=0; i< pairCount;i++) {
+        const index = Math.floor(Math.random() * fruitArray.length);
+        newFruit.push(fruitArray.splice(index,1) [0]);
+    }
+    return newFruit;
+
+}
