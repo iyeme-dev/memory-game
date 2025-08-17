@@ -131,11 +131,21 @@ function handleFlip(e) {
             if(matchedPairs === fruits.length) {
                 endLevel(true)
             }
+            else {
+            setTimeout ( () => {
+                firstCard.textContent = '';
+                card.textContent ='';
+                firstCard.classList.remove('flipped');
+                card.classList.remove('flipped');
+                firstCard = null;
+                lock = false;
+            }, 700);
+            }
         }
     }
 }
 
 // Function to end level
 function endLevel(success) {
-    
+
 }
