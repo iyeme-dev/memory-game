@@ -134,3 +134,8 @@ function handleFlip(e) {
         }
     }
 }
+
+// Function to end level
+function endLevel(success) {
+    
+}
