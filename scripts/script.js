@@ -109,3 +109,28 @@ function startLevel () {
         card.addEventListener('click',)
     })
 }
+
+// function to handle flips
+function handleFlip(e) {
+    if (lock) return;
+    if (card.classList.contains('flipped')) return;
+    card.textContent = card.dataset.fruit;
+    card.classList.add('flipped');
+    totalFlips++;
+
+    if(!firstCard) {
+        firstCard = card;
+    }   else {
+        lock = true;
+        if (firstCard.dataset.fruit === card.dataset.fruit) {
+            firstCard.classList.add('matched');
+            card.classList.add('matched');
+            matchedPairs++;
+            firstCard = null;
+            lock=false
+            if(matchedPairs === fruits.length) {
+                endLevel(true)
+            }
+        }
+    }
+}
